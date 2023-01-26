@@ -73,6 +73,14 @@ document.addEventListener('mousedown', (()=>{
     cursorBox.classList.add('mouseDown')
 }))
 
+
+document.addEventListener('touchstart', (()=>{
+    cursorBox.classList.add('jee')
+    cursorBox.style.display = 'none'
+}))
+
+
+
 document.addEventListener('mouseup', (()=>{
     cursorBox.classList.remove('mouseDown')
 }))
