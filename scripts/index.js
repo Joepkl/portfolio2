@@ -74,8 +74,9 @@ document.addEventListener('mousedown', (()=>{
 }))
 
 
-document.addEventListener('touchstart', (()=>{
+document.addEventListener('touchstart', ((e)=>{
     cursorBox.classList.add('jee')
+    e.preventDefault()
     cursorBox.style.display = 'none'
 }))
 
