@@ -63,6 +63,15 @@ setTimeout(()=>{
 const cursorBox = document.querySelector('#cursorBox')
 
 document.addEventListener('mousemove', ((e)=>{
+    // cursorBox.classList.add('visible')
+
+    // console.log('ik voeg constant dezelfde class toe')
+
+    // document.querySelector('div#cursorBox:not(.visible)').classList.add('visible')
+   
+//     if(cursorBox.classList.contains('visible')){
+//        console.log('heb ik')
+//    }
     const x = e.pageX
     const y = e.pageY
     cursorBox.style.left = x + 'px'
@@ -73,14 +82,10 @@ document.addEventListener('mousedown', (()=>{
     cursorBox.classList.add('mouseDown')
 }))
 
-
 document.addEventListener('touchstart', ((e)=>{
-    cursorBox.classList.add('jee')
     e.preventDefault()
     cursorBox.style.display = 'none'
 }))
-
-
 
 document.addEventListener('mouseup', (()=>{
     cursorBox.classList.remove('mouseDown')

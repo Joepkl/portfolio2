@@ -91,10 +91,27 @@ h3:nth-of-type(2){
     pointer-events: none;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    transition: .05s;
+    transition: 0s;
+    opacity: 1;
 }
+
+/* div#cursorBox.visible{
+    opacity: 1;
+} */
 
 div#cursorBox.mouseDown{
     width: 30px;
     height: 30px;
 }
+
+div#cursorBox.mobile{
+    display: none;
+}
+
+
+@media only screen and (max-width: 960px){
+    #cursorBox{
+        display: none;
+    }
+}
+
