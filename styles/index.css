@@ -93,11 +93,9 @@ h3:nth-of-type(2){
     border-radius: 50%;
     transition: 0s;
     opacity: 1;
+    left: -3em;
 }
 
-/* div#cursorBox.visible{
-    opacity: 1;
-} */
 
 div#cursorBox.mouseDown{
     width: 30px;
