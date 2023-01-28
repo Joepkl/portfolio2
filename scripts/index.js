@@ -27,9 +27,10 @@ verschijnen2()
 
 
 // FRONT END developer typing animatie
-const tekst1 = document.querySelectorAll('section.landing h3:first-of-type span')
 
 function verschijnTekst(){
+    const tekst1 = document.querySelectorAll('section#landing h3:first-of-type span')
+
     setTimeout(()=>{  tekst1[0].classList.add('verschijn')},2000)
     setTimeout(()=>{  tekst1[1].classList.add('verschijn')},2500)
     setTimeout(()=>{  tekst1[2].classList.add('verschijn')},3000)
@@ -42,7 +43,7 @@ verschijnTekst()
 
 // Front end DEVELOPER typing animatie
 function typingAnimatie(){
-    const tekst = document.querySelectorAll('section.landing h3:nth-of-type(2) span')
+    const tekst = document.querySelectorAll('section#landing h3:nth-of-type(2) span')
     
     setTimeout(()=>{  tekst[0].classList.add('typing')},150)
     setTimeout(()=>{  tekst[1].classList.add('typing')},300)
