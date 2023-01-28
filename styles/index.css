@@ -15,6 +15,10 @@
     src: url(../fonts/Abel-Regular.ttf);
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: Abel;
 }
@@ -26,7 +30,7 @@ main{
 
 
 /* Landingspagina */
-section.landing{
+section#landing{
     height: 100vh;
 }
 
@@ -158,6 +162,7 @@ aside a::after{
     top: 0;
     left: 90%;
     opacity: 0;
+    transition: .5s;
 }
 
 
@@ -174,7 +179,7 @@ aside a.active::after{
 
 
 /* About me pagina */
-section.aboutMe{
+section#aboutMe{
     height: 100vh;
     background-color: black;
 }
@@ -194,7 +199,7 @@ h4{
 
 
 /* Work pagina */
-section.work{
+section#work{
     height: 100vh;
 }
 
@@ -202,7 +207,7 @@ section.work{
 
 
 /* Contact pagina */
-section.contact{
+section#contact{
     height: 100vh;
     background-color: black;
 }

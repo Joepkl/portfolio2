@@ -108,7 +108,7 @@ function aboutMeObserver() {
     };
 
     let observer
-    const boxElement = document.querySelector('section.aboutMe')
+    const boxElement = document.querySelector('section#aboutMe')
   
     observer = new IntersectionObserver(aboutActive, options)
     observer.observe(boxElement)
@@ -139,7 +139,7 @@ function workObserver() {
     };
 
     let observer
-    const boxElement = document.querySelector('section.work')
+    const boxElement = document.querySelector('section#work')
   
     observer = new IntersectionObserver(workActive, options)
     observer.observe(boxElement)
@@ -168,7 +168,7 @@ function contactObserver() {
     };
 
     let observer
-    const boxElement = document.querySelector('section.contact')
+    const boxElement = document.querySelector('section#contact')
   
     observer = new IntersectionObserver(contactActive, options)
     observer.observe(boxElement)
