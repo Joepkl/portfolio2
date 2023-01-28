@@ -23,6 +23,9 @@ verschijnen2()
 
 
 
+
+
+
 // FRONT END developer typing animatie
 const tekst1 = document.querySelectorAll('section.landing h3:first-of-type span')
 
@@ -59,6 +62,10 @@ setTimeout(()=>{
 
 
 
+
+
+
+
 // Volg cursor gebruiker
 const cursorBox = document.querySelector('#cursorBox')
 
@@ -81,3 +88,100 @@ document.addEventListener('mouseup', (()=>{
     cursorBox.classList.remove('mouseDown')
 }))
 
+
+
+
+
+
+
+
+// Intersection observer  About me
+const navAboutMe = document.querySelector('aside a:first-of-type')
+const navWork = document.querySelector('aside a:nth-of-type(2)')
+const navContact = document.querySelector('aside a:nth-of-type(3)')
+
+
+function aboutMeObserver() {
+    let options = {
+    //   rootMargin: "0px",
+        threshold: 0.5
+    };
+
+    let observer
+    const boxElement = document.querySelector('section.aboutMe')
+  
+    observer = new IntersectionObserver(aboutActive, options)
+    observer.observe(boxElement)
+}
+  
+aboutMeObserver()
+
+function aboutActive(entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        navAboutMe.classList.add('active')
+        navWork.classList.remove('active')
+        navContact.classList.remove('active')
+      } else {
+        navAboutMe.classList.remove('active')
+      }
+    })
+}
+
+
+
+
+// Intersection observer work
+function workObserver() {
+    let options = {
+    //   rootMargin: "0px",
+        threshold: 0.5
+    };
+
+    let observer
+    const boxElement = document.querySelector('section.work')
+  
+    observer = new IntersectionObserver(workActive, options)
+    observer.observe(boxElement)
+}
+  
+workObserver()
+
+function workActive(entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        navWork.classList.add('active')
+        navAboutMe.classList.remove('active')
+        navContact.classList.remove('active')
+      }
+    })
+  }
+
+
+
+
+// Intersection observer work
+function contactObserver() {
+    let options = {
+    //   rootMargin: "0px",
+        threshold: 0.5
+    };
+
+    let observer
+    const boxElement = document.querySelector('section.contact')
+  
+    observer = new IntersectionObserver(contactActive, options)
+    observer.observe(boxElement)
+}
+  
+contactObserver()
+
+function contactActive(entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        navContact.classList.add('active')
+        navAboutMe.classList.remove('active')
+        navWork.classList.remove('active')
+      }
+    })
+  }
