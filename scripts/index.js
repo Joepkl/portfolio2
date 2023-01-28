@@ -26,14 +26,13 @@ verschijnen2()
 
 
 
-// FRONT END developer typing animatie
-
+// FRONT END developer verschijnen animatie
 function verschijnTekst(){
-    const tekst1 = document.querySelectorAll('section#landing h3:first-of-type span')
+    const tekst = document.querySelectorAll('section#landing h3:first-of-type span')
 
-    setTimeout(()=>{  tekst1[0].classList.add('verschijn')},2000)
-    setTimeout(()=>{  tekst1[1].classList.add('verschijn')},2500)
-    setTimeout(()=>{  tekst1[2].classList.add('verschijn')},3000)
+    setTimeout(()=>{  tekst[0].classList.add('verschijn')},2000)
+    setTimeout(()=>{  tekst[1].classList.add('verschijn')},2500)
+    setTimeout(()=>{  tekst[2].classList.add('verschijn')},3000)
 }
 
 verschijnTekst()
@@ -59,6 +58,21 @@ function typingAnimatie(){
 setTimeout(()=>{
     typingAnimatie()
 },3000)
+
+
+
+
+
+// Scroll down verschijn animatie
+setTimeout(()=>{
+    const tekst = document.querySelector('section#landing > p')
+    const button = document.querySelector('section#landing > a')
+
+    tekst.classList.add('verschijn')
+    button.classList.add('verschijn')
+},5000)
+
+
 
 
 
