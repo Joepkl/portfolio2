@@ -63,45 +63,30 @@ setTimeout(()=>{
 
 
 
-// Scroll down verschijn animatie
-setTimeout(()=>{
-    const tekst = document.querySelector('section#landing > p')
-    const button = document.querySelector('section#landing > a')
-
-    tekst.classList.add('verschijn')
-    button.classList.add('verschijn')
-},5000)
-
-
-
-
-
-
-
 
 
 
 // Volg cursor gebruiker
-const cursorBox = document.querySelector('#cursorBox')
+// const cursorBox = document.querySelector('#cursorBox')
 
-document.addEventListener('mousemove', ((e)=>{
-    const x = e.pageX
-    const y = e.pageY
-    cursorBox.style.left = x + 'px'
-    cursorBox.style.top = y + 'px'
-}))
+// document.addEventListener('mousemove', ((e)=>{
+//     const x = e.pageX
+//     const y = e.pageY
+//     cursorBox.style.left = x + 'px'
+//     cursorBox.style.top = y + 'px'
+// }))
 
-document.addEventListener('mousedown', (()=>{
-    cursorBox.classList.add('mouseDown')
-}))
+// document.addEventListener('mousedown', (()=>{
+//     cursorBox.classList.add('mouseDown')
+// }))
 
-document.addEventListener('touchstart', ((e)=>{
-    e.preventDefault() // Prevent mousedown event
-}))
+// document.addEventListener('touchstart', ((e)=>{
+//     e.preventDefault() // Prevent mousedown event
+// }))
 
-document.addEventListener('mouseup', (()=>{
-    cursorBox.classList.remove('mouseDown')
-}))
+// document.addEventListener('mouseup', (()=>{
+//     cursorBox.classList.remove('mouseDown')
+// }))
 
 
 

@@ -12,7 +12,12 @@
 
 @font-face {
     font-family: Abel;
-    src: url(../fonts/Abel-Regular.ttf);
+    src: url(../fonts/TuskerGrotesk-3500Medium.ttf);
+}
+
+@font-face {
+    font-family: Indie;
+    src: url(../fonts/IndieFlower-Regular.ttf);
 }
 
 html{
@@ -21,6 +26,7 @@ html{
 
 body{
     font-family: Abel;
+    overflow-x: hidden;
 }
 
 main{
@@ -37,7 +43,8 @@ section#landing{
 
 h1, h2{
     color: var(--textColor);
-    font-size: 3.5em;
+    font-size: 7em;
+    line-height: 1.1;
     position: relative;
     width: fit-content;
     text-transform: uppercase;
@@ -70,54 +77,14 @@ h1.test::after, h2.test::after {
 
 
 
-/* Scroll down animatie */
-section#landing > p{
-    position: absolute;
-    bottom: 2em;
-    color: var(--textColor);
-    font-size: 2em;
-    width: 100vw;
-    text-align: center;
-    opacity: 0;
-}
-
-section#landing > p.verschijn{
-    opacity: 1;
-}
-
-section#landing > a{
-    position: absolute;
-    bottom: 1em;
-    left: 50%;
-    font-size: 2em;
-    color: var(--detailColor);
-    text-decoration: none;
-    rotate: 90deg;
-    animation: bounce 2s infinite;
-    opacity: 0;
-}
-
-section#landing > a.verschijn{
-    opacity: 1;
-}
-
-@keyframes bounce{
-    0%{transform: translateX(0em);}
-    50%{transform: translateX(.3em);}
-    100%{transform: translateX(0em);}
-}
-
-
-
-
-
 
 /* Front end developer animatie */
 h3{
     color: var(--detailColor);
-    font-size: 3.5em;
-    margin-top: 5em;
-    margin-left: 1em;
+    font-size: 5em;
+    line-height: 1.1;
+    margin-top: 1em;
+    margin-left: 1.5em;
     text-transform: uppercase;
 }
 
@@ -145,7 +112,7 @@ h3:nth-of-type(2){
 
 
 /* Muis volgen animatie */
-#cursorBox{
+/* #cursorBox{
     position: absolute;
     width: 15px;
     height: 15px;
@@ -166,7 +133,7 @@ div#cursorBox.mouseDown{
 
 div#cursorBox.mobile{
     display: none;
-}
+} */
 
 
 
@@ -176,6 +143,7 @@ div#cursorBox.mobile{
 aside{
     position: sticky;
     top: 0;
+    z-index: 9;
 }
 
 aside nav{  
@@ -186,8 +154,33 @@ aside nav{
     justify-content: space-around;
     align-items: start;
     position: absolute;
-    top: 0;
 }
+
+aside a:first-of-type::before{
+    content: '<nav>';
+    display: inline-block;
+    writing-mode: horizontal-tb;
+    transform: rotate(30deg);
+    font-size: .5em;
+    position: absolute;
+    top: -1.8em;
+    left: 1em;
+    font-family: Indie;
+    text-transform: lowercase;
+}
+
+/* aside a:last-of-type::before{
+    content: '</nav>';
+    display: inline-block;
+    writing-mode: horizontal-tb;
+    transform: rotate(330deg);
+    font-size: .5em;
+    position: absolute;
+    top: 110%;
+    left: 1em;
+    font-family: Indie;
+    text-transform: lowercase;
+} */
 
 aside a{
     color: var(--textColor);
@@ -196,6 +189,7 @@ aside a{
     font-size: 2em;
     writing-mode: vertical-rl;
     position: relative;
+    text-transform: uppercase;
 }
 
 aside a::after{
@@ -219,10 +213,6 @@ aside a.active::after{
 
 
 
-
-
-
-
 /* About me pagina */
 section#aboutMe{
     height: 100vh;
@@ -231,14 +221,27 @@ section#aboutMe{
 
 h4{
     color: var(--textColor);
-    font-size: 3.5em;
+    font-size: 5em;
     width: fit-content;
     text-transform: uppercase;
     margin-left: auto;
     margin-right: .5em;
+    line-height: 1;
+    padding-top: .5em;
+    position: relative;
 }
 
-
+h4::before{
+    content: '<h4>';
+    font-size: .3em;
+    text-transform: lowercase;
+    font-family: Indie;
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: -1em;
+    transform: rotate(10deg);
+}
 
 
 
