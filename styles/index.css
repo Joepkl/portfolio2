@@ -11,7 +11,7 @@
 }
 
 @font-face {
-    font-family: Abel;
+    font-family: Tusker;
     src: url(../fonts/TuskerGrotesk-3500Medium.ttf);
 }
 
@@ -20,12 +20,17 @@
     src: url(../fonts/IndieFlower-Regular.ttf);
 }
 
+@font-face {
+    font-family: Teko;
+    src: url(../fonts/Teko-Light.ttf);
+}
+
 html{
     scroll-behavior: smooth;
 }
 
 body{
-    font-family: Abel;
+    font-family: Tusker;
     overflow-x: hidden;
 }
 
@@ -83,8 +88,8 @@ h3{
     color: var(--detailColor);
     font-size: 5em;
     line-height: 1.1;
-    margin-top: 1em;
-    margin-left: 1.5em;
+    width: fit-content;
+    margin: 1em .5em 0 auto;
     text-transform: uppercase;
 }
 
@@ -169,19 +174,6 @@ aside a:first-of-type::before{
     text-transform: lowercase;
 }
 
-/* aside a:last-of-type::before{
-    content: '</nav>';
-    display: inline-block;
-    writing-mode: horizontal-tb;
-    transform: rotate(330deg);
-    font-size: .5em;
-    position: absolute;
-    top: 110%;
-    left: 1em;
-    font-family: Indie;
-    text-transform: lowercase;
-} */
-
 aside a{
     color: var(--textColor);
     color: darkgrey;
@@ -215,7 +207,6 @@ aside a.active::after{
 
 /* About me pagina */
 section#aboutMe{
-    height: 100vh;
     background-color: black;
 }
 
@@ -224,8 +215,7 @@ h4{
     font-size: 5em;
     width: fit-content;
     text-transform: uppercase;
-    margin-left: auto;
-    margin-right: .5em;
+    margin: 0 .5em .8em auto;
     line-height: 1;
     padding-top: .5em;
     position: relative;
@@ -236,14 +226,76 @@ h4::before{
     font-size: .3em;
     text-transform: lowercase;
     font-family: Indie;
-    display: inline-block;
     position: absolute;
     top: 100%;
     left: -1em;
     transform: rotate(10deg);
 }
 
+h5{
+    color: var(--textColor);
+    font-family: Tusker;
+    font-size: 3em;
+    text-transform: uppercase;
+    margin-top: 1em;
+}
 
+div{
+    margin-left: 4em;
+    margin-right: 1.2em;
+    position: relative;
+}
+
+div > p{
+    font-family: Teko;
+    text-transform: uppercase;
+    color: var(--textColor);
+    font-size: 1.5em;
+    display: inline;
+}
+
+
+div > a{
+    font-size: 1.5em;
+    font-family: Teko;
+    color: var(--textColor);
+    width: fit-content;
+    text-transform: uppercase;
+}
+
+
+div > img{
+    width: 10em;
+    display: block;
+    transform: rotate(10deg);
+    margin: 4em 2em 0 auto;
+}
+
+div > p:nth-of-type(3){
+    position: absolute;
+    background-color: var(--detailColor);
+    color: black;
+    padding: 0 .5em;
+    transform: rotate(10deg);
+    bottom: 24em;
+    right: 0;
+}
+
+div > ul{
+    padding-bottom: 3em;
+}
+
+
+div > ul p{
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-family: Teko;
+    color: var(--textColor);
+    width: fit-content;
+    border: solid .1em white;
+    padding: .1em 1em;
+    margin-bottom: .6em;
+}
 
 
 /* Work pagina */
