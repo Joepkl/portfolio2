@@ -410,17 +410,17 @@ section#contact ul p{
 
 /* Geen hover interactie bij tablet/mobiel */
 @media only screen and (max-width: 960px){
+    section#aboutMe div > img:hover{
+        transform: rotate(10deg) scale(1);
+    }
+    section#aboutMe div > ul p:hover{
+        transform: translateX(0);
+    }
     section#work ul li:hover p{
         transform: translateY(0);
     }
     section#work ul li:hover img{
         transform: scale(1);
-    }
-    div > img:hover{
-        transform: scale(1);
-        filter: blur(0);
-    }
-    div > ul p:hover{
-        transform: translateX(0);
+        filter: blur(1px);
     }
 }
