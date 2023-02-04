@@ -320,11 +320,11 @@ section#aboutMe div > ul p:hover{
 /* Work pagina */
 section#work ul{
     list-style: none;
+    margin-left: 5em;
 }
 
 section#work ul li{
     width: calc(100vw - 2em - 5em);
-    margin-left: 5em;
     margin-bottom: 2em;
     position: relative;
     overflow: hidden;
@@ -345,14 +345,15 @@ section#work ul li:last-of-type{
     margin-bottom: 5em;
 }
 
-section#work ul p{
+section#work ul li > p{
+    font-family: Teko;
     color: var(--textColor);
     background-color: var(--backgroundColor2);
     font-size: 1.5em;
     position: absolute;
     text-align: center;
     text-transform: uppercase;
-    bottom: 0em;
+    bottom: 0;
     width: 100%;
     padding: .3em 0;
     transition: .5s;
@@ -368,6 +369,11 @@ section#work ul li:hover img{
 }
 
 
+/* Beschrijvingen projecten (min width desktop) */
+section#work ul li:nth-of-type(2), section#work ul li:nth-of-type(3), section#work ul li:nth-of-type(6), section#work ul li:nth-of-type(7){
+    display: none;
+}
+
 
 
 
@@ -381,13 +387,13 @@ section#contact{
     height: 100vh;
     background-color: var(--backgroundColor2);
 }
-
 section#contact ul p{
     font-size: 1.5em;
     color: var(--textColor);
     text-transform: uppercase;
     font-family: Teko;
 }
+
 
 
 
@@ -422,5 +428,42 @@ section#contact ul p{
     section#work ul li:hover img{
         transform: scale(1);
         filter: blur(1px);
+    }
+}
+
+
+
+
+
+/* Breakpoint fixes */
+@media only screen and (max-width: 380px){
+    h1,h2{
+        font-size: 6em;
+        margin-right: .3em;
+    }
+    h3{
+        font-size: 4em;
+        margin-right: 1em;
+    }
+}
+
+@media only screen and (min-width: 600px){
+    section#work ul{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2em;
+        margin-right: 2em;
+    }
+    section#work ul li{
+    width: calc(50vw - 4.5em);
+    }
+    section#work ul li:nth-of-type(3){
+        margin-bottom: 5em;
+    }
+}
+
+@media only screen and (min-width: 960px){
+    section#work ul li:nth-of-type(2), section#work ul li:nth-of-type(3), section#work ul li:nth-of-type(6), section#work ul li:nth-of-type(7){
+        display: block;
     }
 }
