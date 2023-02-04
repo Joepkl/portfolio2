@@ -6,7 +6,7 @@
 :root{
     --detailColor: #fad84b;
     --backgroundColor: #143a4c;
-    --backgroundColor2: #4da87a;
+    --backgroundColor2: #000000;
     --textColor: #ffffff;
 }
 
@@ -197,7 +197,6 @@ aside a::after{
 }
 
 
-
 /* Aside navigatie  active animatie */
 aside a.active::after{
     opacity: 1;
@@ -205,9 +204,12 @@ aside a.active::after{
 
 
 
+
+
+
 /* About me pagina */
 section#aboutMe{
-    background-color: black;
+    background-color: var(--backgroundColor2);
 }
 
 h4{
@@ -264,7 +266,7 @@ div > a{
 }
 
 
-div > img{
+section#aboutMe div > img{
     width: 10em;
     display: block;
     transform: rotate(10deg);
@@ -272,26 +274,27 @@ div > img{
     transition: .5s;
 }
 
-div > img:hover{
+section#aboutMe div > img:hover{
     transform: scale(1.3);
 }
 
-div > p:nth-of-type(3){
+section#aboutMe div > p:nth-of-type(3){
     position: absolute;
     background-color: var(--detailColor);
-    color: black;
+    color: var(--backgroundColor2);
     padding: 0 .5em;
     transform: rotate(10deg);
-    bottom: 23em;
+    bottom: 24em;
     right: 0;
 }
 
-div > ul{
-    padding-bottom: 3em;
+section#aboutMe div > ul{
+    padding-bottom: 5em;
+    list-style: none;
 }
 
 
-div > ul p{
+section#aboutMe div > ul p{
     font-size: 1.5em;
     text-transform: uppercase;
     font-family: Teko;
@@ -303,15 +306,72 @@ div > ul p{
     transition: .5s;
 }
 
-div > ul p:hover{
+section#aboutMe div > ul p:hover{
     transform: translateX(3em);
 }
 
 
+
+
+
+
+
+
 /* Work pagina */
-section#work{
-    height: 100vh;
+section#work ul{
+    list-style: none;
 }
+
+section#work ul li{
+    width: calc(100vw - 2em - 5em);
+    margin-left: 5em;
+    margin-bottom: 2em;
+    position: relative;
+    overflow: hidden;
+}
+
+section#work ul img{
+    width: 100%;
+    filter: blur(1px);
+    transition: .5s;
+}
+
+section#work ul a{
+    height: 100%;
+    display: block;
+}
+
+section#work ul li:last-of-type{
+    margin-bottom: 5em;
+}
+
+section#work ul p{
+    color: var(--textColor);
+    background-color: var(--backgroundColor2);
+    font-size: 1.5em;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    bottom: 0em;
+    width: 100%;
+    padding: .3em 0;
+    transition: .5s;
+}
+
+section#work ul li:hover p{
+    transform: translateY(2em);
+}
+
+section#work ul li:hover img{
+    transform: scale(1.1);
+    filter: blur(0);
+}
+
+
+
+
+
+
 
 
 
@@ -319,7 +379,14 @@ section#work{
 /* Contact pagina */
 section#contact{
     height: 100vh;
-    background-color: black;
+    background-color: var(--backgroundColor2);
+}
+
+section#contact ul p{
+    font-size: 1.5em;
+    color: var(--textColor);
+    text-transform: uppercase;
+    font-family: Teko;
 }
 
 
@@ -333,10 +400,27 @@ section#contact{
 
 
 
-/* Niet muis volgen bij tablet/telefoon */
+/* Niet muis volgen bij tablet/mobiel */
 @media only screen and (max-width: 960px){
     #cursorBox{
         display: none;
     }
 }
 
+
+/* Geen hover interactie bij tablet/mobiel */
+@media only screen and (max-width: 960px){
+    section#work ul li:hover p{
+        transform: translateY(0);
+    }
+    section#work ul li:hover img{
+        transform: scale(1);
+    }
+    div > img:hover{
+        transform: scale(1);
+        filter: blur(0);
+    }
+    div > ul p:hover{
+        transform: translateX(0);
+    }
+}
