@@ -31,7 +31,7 @@ html{
 
 body{
     font-family: Tusker;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 main{
