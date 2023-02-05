@@ -95,7 +95,7 @@ setTimeout(()=>{
 
 
 
-// Intersection observer  About me
+// NAV Intersection observer  About me
 const navAboutMe = document.querySelector('aside a:first-of-type')
 const navWork = document.querySelector('aside a:nth-of-type(2)')
 const navContact = document.querySelector('aside a:nth-of-type(3)')
@@ -131,7 +131,7 @@ function aboutActive(entries) {
 
 
 
-// Intersection observer work
+// NAV Intersection observer work
 function workObserver() {
     let options = {
     //   rootMargin: "0px",
@@ -160,7 +160,7 @@ function workActive(entries) {
 
 
 
-// Intersection observer work
+// NAV Intersection observer contact
 function contactObserver() {
     let options = {
     //   rootMargin: "0px",
@@ -184,4 +184,70 @@ function contactActive(entries) {
         navWork.classList.remove('active')
       }
     })
-  }
+}
+
+
+
+
+
+
+
+
+
+// ANIMATIE Titel
+function titelAnimatieObserver() {
+    let options = {
+    //   rootMargin: "0px",
+        threshold: 0.5
+    };
+
+    let observer
+    const boxElement = document.querySelectorAll('h4')
+  
+    observer = new IntersectionObserver(titelAnimatie, options)
+
+    boxElement.forEach((element)=>{
+      observer.observe(element)
+    })
+}
+  
+titelAnimatieObserver()
+
+function titelAnimatie(entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('titelAnimatie')
+      }
+    })
+}
+
+
+
+
+
+// ANIMATIE Work
+function workAnimatieObserver() {
+  let options = {
+  //   rootMargin: "0px",
+      threshold: 0.1
+  };
+
+  let observer
+  const boxElement = document.querySelectorAll('section#work ul li')
+
+  observer = new IntersectionObserver(workAnimatie, options)
+
+  boxElement.forEach((element)=>{
+    observer.observe(element)
+  })
+}
+
+workAnimatieObserver()
+
+function workAnimatie(entries) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('workAnimatie')
+    }
+  })
+}
