@@ -31,6 +31,8 @@ html{
 
 body{
     font-family: Tusker;
+    width: 100%;
+    height: 100%;
     overflow-x: hidden;
 }
 
@@ -117,7 +119,7 @@ h3:nth-of-type(2){
 
 
 /* Muis volgen animatie */
-/* #cursorBox{
+#cursorBox{
     position: absolute;
     width: 15px;
     height: 15px;
@@ -138,7 +140,7 @@ div#cursorBox.mouseDown{
 
 div#cursorBox.mobile{
     display: none;
-} */
+}
 
 
 
@@ -223,7 +225,7 @@ h4{
     position: relative;
     transition: .5s;
     opacity: 0;
-    transform: rotate(30deg) translateX(1em) translateY(.5em);
+    transform: rotate(30deg) translateY(.5em);
 }
 
 h4::before{
@@ -481,6 +483,27 @@ section#work ul li.workAnimatie{
 }
 
 @media only screen and (min-width: 600px){
+    h3{
+        margin: .5em auto 0 2em;
+        font-size: 6em;
+    }
+    h1,h2{
+        font-size: 8em;
+    }
+    h1{
+        padding-top: .7em;
+    }
+
+    section#aboutMe div > img{
+        width: 15em;
+    }
+    section#aboutMe h5{
+        margin-top: -.5em;
+    }
+    section#aboutMe div > p:nth-of-type(3){
+        bottom: 25.5em;
+    }
+
     section#work ul{
         display: flex;
         flex-wrap: wrap;
@@ -488,12 +511,59 @@ section#work ul li.workAnimatie{
         margin-right: 2em;
     }
     section#work ul li{
-    width: calc(50vw - 4.5em);
+        width: calc(50% - 1em);
     }
     section#work ul li:nth-of-type(3){
         margin-bottom: 5em;
     }
     section#work ul li:nth-of-type(2), section#work ul li:nth-of-type(3), section#work ul li:nth-of-type(6), section#work ul li:nth-of-type(7){
         display: block;
+    }
+    
+}
+
+
+@media only screen and (min-width: 800px){
+    section#aboutMe h5{
+        margin-top: -3em;
+    }
+    section#aboutMe div > p:nth-of-type(3){
+        bottom: 20.5em;
+    }
+}
+
+@media only screen and (min-width: 980px){
+    h4{
+        margin-right: 2em;
+    }
+    section#aboutMe div{
+        margin-left: 11em;
+        margin-right: 8em;
+    }
+    section#work ul{
+        margin-left: 11em;
+        margin-right: 8em;
+        margin-top: 5em;
+    }
+    section#work ul li{
+        width: calc(50% - 1em);
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    h4{
+        margin-right: 20vw;
+    }
+    section#aboutMe div{
+        margin-left: 20vw;
+        margin-right: 20vw;
+    }
+    section#work ul{
+        margin-left: 20vw;
+        margin-right: 20vw;
+        margin-top: 5em;
+    }
+    section#work ul li{
+        width: calc(50% - 1em);
     }
 }
