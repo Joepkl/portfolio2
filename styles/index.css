@@ -168,6 +168,11 @@ aside a {
   writing-mode: vertical-rl;
   position: relative;
   text-transform: uppercase;
+  transition: .5s;
+}
+
+aside a:hover{
+  color: var(--textColor);
 }
 
 aside a::after {
@@ -185,6 +190,10 @@ aside a::after {
 /* Aside navigatie  active animatie */
 aside a.active::after {
   opacity: 1;
+}
+
+aside a.active{
+  color: var(--textColor);
 }
 
 /* About me pagina */
@@ -420,11 +429,11 @@ textarea{
 button{
   background-color: var(--detailColor);
   border: none;
-  padding: .5em;
+  padding: .5em 1em;
   text-transform: uppercase;
   font-size: 1em;
   margin-left: 5em;
-  margin-top: 1em;
+  margin-top: 2em;
   cursor: pointer;
   color: var(--backgroundColor2);
   position: absolute;
