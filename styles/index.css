@@ -400,7 +400,7 @@ section#contact > div {
 
 
 form{
-  margin: 10em 2.5em 0 5em;
+  margin: 7em 2.5em 0 5em;
   position: relative;
 }
 
@@ -502,15 +502,13 @@ section#work ul li.workAnimatie {
   }
 }
 
-/* @media only screen and (max-width: 480px){
-  form input, form div:first-of-type input, textarea{
-    width: 15em;
-  }
-  form{
-    width: 17em;
-  }
-} */
 
+@media only screen and (min-width: 500px){
+  form{
+    width: 20em;
+    margin: 7em auto 0 auto;
+  }
+}
 
 
 
@@ -556,9 +554,6 @@ section#work ul li.workAnimatie {
   }
 }
 
-@media only screen and (min-width: 680px){
-  
-}
 
 @media only screen and (min-width: 800px) {
   section#aboutMe h5 {
