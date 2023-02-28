@@ -67,26 +67,26 @@ setTimeout(()=>{
 
 
 // Volg cursor gebruiker
-// const cursorBox = document.querySelector('#cursorBox')
+const cursorBox = document.querySelector('#cursorBox')
 
-// document.addEventListener('mousemove', ((e)=>{
-//     const x = e.pageX
-//     const y = e.pageY
-//     cursorBox.style.left = x + 'px'
-//     cursorBox.style.top = y + 'px'
-// }))
+document.addEventListener('mousemove', ((e)=>{
+    const x = e.pageX
+    const y = e.pageY
+    cursorBox.style.left = x + 'px'
+    cursorBox.style.top = y + 'px'
+}))
 
-// document.addEventListener('mousedown', (()=>{
-//     cursorBox.classList.add('mouseDown')
-// }))
+document.addEventListener('mousedown', (()=>{
+    cursorBox.classList.add('mouseDown')
+}))
 
-// document.addEventListener('touchstart', ((e)=>{
-//     e.preventDefault() // Prevent mousedown event
-// }))
+document.addEventListener('touchstart', ((e)=>{
+    e.preventDefault() // Prevent mousedown event
+}))
 
-// document.addEventListener('mouseup', (()=>{
-//     cursorBox.classList.remove('mouseDown')
-// }))
+document.addEventListener('mouseup', (()=>{
+    cursorBox.classList.remove('mouseDown')
+}))
 
 
 
@@ -135,7 +135,7 @@ function aboutActive(entries) {
 function workObserver() {
     let options = {
     //   rootMargin: "0px",
-        threshold: 0.5
+        threshold: 0.3
     };
 
     let observer
