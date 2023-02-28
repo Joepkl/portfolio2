@@ -420,10 +420,11 @@ button{
   border: none;
   padding: .5em;
   text-transform: uppercase;
-  font-size: .8em;
-  margin-left: 13.3em;
+  font-size: 1em;
+  margin-left: 5em;
   margin-top: 1em;
   cursor: pointer;
+  color: var(--backgroundColor2);
 }
 
 form{
