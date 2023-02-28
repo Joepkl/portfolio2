@@ -197,6 +197,10 @@ aside a.active{
   color: var(--detailColor);
 }
 
+
+
+
+
 /* About me pagina */
 section#aboutMe {
   background-color: var(--backgroundColor2);
@@ -255,6 +259,11 @@ div > a {
   color: var(--textColor);
   width: fit-content;
   text-transform: uppercase;
+  transition: .5s;
+}
+
+div a:hover{
+  color: var(--detailColor);
 }
 
 section#aboutMe div > img {
@@ -300,6 +309,11 @@ section#aboutMe div > ul p:hover {
   transform: translateX(3em);
   color: var(--detailColor);
   border: solid 0.1em var(--detailColor);
+}
+
+section#aboutMe div > ul li p.skillsAnimatie{
+  border-left: solid .5em var(--detailColor);
+  padding: 0.1em 1.2em;
 }
 
 
@@ -488,6 +502,11 @@ section#work ul li.workAnimatie {
 
 /* Geen hover interactie bij tablet/mobiel */
 @media only screen and (max-width: 960px) {
+  section#aboutMe div > ul p:hover{
+    transform: translateX(3em);
+    color: var(--textColor);
+    border: solid 0.1em var(--textColor);
+  }
   section#aboutMe div > img:hover {
     transform: rotate(10deg) scale(1);
   }

@@ -1,18 +1,18 @@
 // Verschijn animatie Joep Klaassen
-function verschijnen1(){
-    const h1 = document.querySelector('h1')
-    h1.classList.add('test')
-    setTimeout(()=>{
-        h1.classList.remove('test')
-    },700)
+function verschijnen1() {
+  const h1 = document.querySelector('h1')
+  h1.classList.add('test')
+  setTimeout(() => {
+    h1.classList.remove('test')
+  }, 700)
 }
 
-function verschijnen2(){
-    const h2 = document.querySelector('h2')
-    h2.classList.add('test')
-    setTimeout(()=>{
-        h2.classList.remove('test')
-    },1400)
+function verschijnen2() {
+  const h2 = document.querySelector('h2')
+  h2.classList.add('test')
+  setTimeout(() => {
+    h2.classList.remove('test')
+  }, 1400)
 }
 
 verschijnen1()
@@ -27,12 +27,12 @@ verschijnen2()
 
 
 // FRONT END developer verschijnen animatie
-function verschijnTekst(){
-    const tekst = document.querySelectorAll('section#landing h3:first-of-type span')
+function verschijnTekst() {
+  const tekst = document.querySelectorAll('section#landing h3:first-of-type span')
 
-    setTimeout(()=>{  tekst[0].classList.add('verschijn')},2000)
-    setTimeout(()=>{  tekst[1].classList.add('verschijn')},2500)
-    setTimeout(()=>{  tekst[2].classList.add('verschijn')},3000)
+  setTimeout(() => { tekst[0].classList.add('verschijn') }, 2000)
+  setTimeout(() => { tekst[1].classList.add('verschijn') }, 2500)
+  setTimeout(() => { tekst[2].classList.add('verschijn') }, 3000)
 }
 
 verschijnTekst()
@@ -41,23 +41,23 @@ verschijnTekst()
 
 
 // Front end DEVELOPER typing animatie
-function typingAnimatie(){
-    const tekst = document.querySelectorAll('section#landing h3:nth-of-type(2) span')
-    
-    setTimeout(()=>{  tekst[0].classList.add('typing')},150)
-    setTimeout(()=>{  tekst[1].classList.add('typing')},300)
-    setTimeout(()=>{  tekst[2].classList.add('typing')},450)
-    setTimeout(()=>{  tekst[3].classList.add('typing')},600)
-    setTimeout(()=>{  tekst[4].classList.add('typing')},750)
-    setTimeout(()=>{  tekst[5].classList.add('typing')},900)
-    setTimeout(()=>{  tekst[6].classList.add('typing')},1050)
-    setTimeout(()=>{  tekst[7].classList.add('typing')},1200)
-    setTimeout(()=>{  tekst[8].classList.add('typing')},1350)   
+function typingAnimatie() {
+  const tekst = document.querySelectorAll('section#landing h3:nth-of-type(2) span')
+
+  setTimeout(() => { tekst[0].classList.add('typing') }, 150)
+  setTimeout(() => { tekst[1].classList.add('typing') }, 300)
+  setTimeout(() => { tekst[2].classList.add('typing') }, 450)
+  setTimeout(() => { tekst[3].classList.add('typing') }, 600)
+  setTimeout(() => { tekst[4].classList.add('typing') }, 750)
+  setTimeout(() => { tekst[5].classList.add('typing') }, 900)
+  setTimeout(() => { tekst[6].classList.add('typing') }, 1050)
+  setTimeout(() => { tekst[7].classList.add('typing') }, 1200)
+  setTimeout(() => { tekst[8].classList.add('typing') }, 1350)
 }
 
-setTimeout(()=>{
-    typingAnimatie()
-},3000)
+setTimeout(() => {
+  typingAnimatie()
+}, 3000)
 
 
 
@@ -69,23 +69,23 @@ setTimeout(()=>{
 // Volg cursor gebruiker
 const cursorBox = document.querySelector('#cursorBox')
 
-document.addEventListener('mousemove', ((e)=>{
-    const x = e.pageX
-    const y = e.pageY
-    cursorBox.style.left = x + 'px'
-    cursorBox.style.top = y + 'px'
+document.addEventListener('mousemove', ((e) => {
+  const x = e.pageX
+  const y = e.pageY
+  cursorBox.style.left = x + 'px'
+  cursorBox.style.top = y + 'px'
 }))
 
-document.addEventListener('mousedown', (()=>{
-    cursorBox.classList.add('mouseDown')
+document.addEventListener('mousedown', (() => {
+  cursorBox.classList.add('mouseDown')
 }))
 
-document.addEventListener('touchstart', ((e)=>{
-    e.preventDefault() // Prevent mousedown event
+document.addEventListener('touchstart', ((e) => {
+  e.preventDefault() // Prevent mousedown event
 }))
 
-document.addEventListener('mouseup', (()=>{
-    cursorBox.classList.remove('mouseDown')
+document.addEventListener('mouseup', (() => {
+  cursorBox.classList.remove('mouseDown')
 }))
 
 
@@ -102,30 +102,30 @@ const navContact = document.querySelector('aside a:nth-of-type(3)')
 
 
 function aboutMeObserver() {
-    let options = {
+  let options = {
     //   rootMargin: "0px",
-        threshold: 0.5
-    };
+    threshold: 0.5
+  };
 
-    let observer
-    const boxElement = document.querySelector('section#aboutMe')
-  
-    observer = new IntersectionObserver(aboutActive, options)
-    observer.observe(boxElement)
+  let observer
+  const boxElement = document.querySelector('section#aboutMe')
+
+  observer = new IntersectionObserver(aboutActive, options)
+  observer.observe(boxElement)
 }
-  
+
 aboutMeObserver()
 
 function aboutActive(entries) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        navAboutMe.classList.add('active')
-        navWork.classList.remove('active')
-        navContact.classList.remove('active')
-      } else {
-        navAboutMe.classList.remove('active')
-      }
-    })
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      navAboutMe.classList.add('active')
+      navWork.classList.remove('active')
+      navContact.classList.remove('active')
+    } else {
+      navAboutMe.classList.remove('active')
+    }
+  })
 }
 
 
@@ -133,57 +133,57 @@ function aboutActive(entries) {
 
 // NAV Intersection observer work
 function workObserver() {
-    let options = {
+  let options = {
     //   rootMargin: "0px",
-        threshold: 0.3
-    };
+    threshold: 0.3
+  };
 
-    let observer
-    const boxElement = document.querySelector('section#work')
-  
-    observer = new IntersectionObserver(workActive, options)
-    observer.observe(boxElement)
+  let observer
+  const boxElement = document.querySelector('section#work')
+
+  observer = new IntersectionObserver(workActive, options)
+  observer.observe(boxElement)
 }
-  
+
 workObserver()
 
 function workActive(entries) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        navWork.classList.add('active')
-        navAboutMe.classList.remove('active')
-        navContact.classList.remove('active')
-      }
-    })
-  }
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      navWork.classList.add('active')
+      navAboutMe.classList.remove('active')
+      navContact.classList.remove('active')
+    }
+  })
+}
 
 
 
 
 // NAV Intersection observer contact
 function contactObserver() {
-    let options = {
+  let options = {
     //   rootMargin: "0px",
-        threshold: 0.5
-    };
+    threshold: 0.5
+  };
 
-    let observer
-    const boxElement = document.querySelector('section#contact')
-  
-    observer = new IntersectionObserver(contactActive, options)
-    observer.observe(boxElement)
+  let observer
+  const boxElement = document.querySelector('section#contact')
+
+  observer = new IntersectionObserver(contactActive, options)
+  observer.observe(boxElement)
 }
-  
+
 contactObserver()
 
 function contactActive(entries) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        navContact.classList.add('active')
-        navAboutMe.classList.remove('active')
-        navWork.classList.remove('active')
-      }
-    })
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      navContact.classList.add('active')
+      navAboutMe.classList.remove('active')
+      navWork.classList.remove('active')
+    }
+  })
 }
 
 
@@ -196,29 +196,29 @@ function contactActive(entries) {
 
 // ANIMATIE Titel
 function titelAnimatieObserver() {
-    let options = {
+  let options = {
     //   rootMargin: "0px",
-        threshold: 0.5
-    };
+    threshold: 0.5
+  };
 
-    let observer
-    const boxElement = document.querySelectorAll('h4')
-  
-    observer = new IntersectionObserver(titelAnimatie, options)
+  let observer
+  const boxElement = document.querySelectorAll('h4')
 
-    boxElement.forEach((element)=>{
-      observer.observe(element)
-    })
+  observer = new IntersectionObserver(titelAnimatie, options)
+
+  boxElement.forEach((element) => {
+    observer.observe(element)
+  })
 }
-  
+
 titelAnimatieObserver()
 
 function titelAnimatie(entries) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('titelAnimatie')
-      }
-    })
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('titelAnimatie')
+    }
+  })
 }
 
 
@@ -228,8 +228,8 @@ function titelAnimatie(entries) {
 // ANIMATIE Work
 function workAnimatieObserver() {
   let options = {
-  //   rootMargin: "0px",
-      threshold: 0.1
+    //   rootMargin: "0px",
+    threshold: 0.1
   };
 
   let observer
@@ -237,7 +237,7 @@ function workAnimatieObserver() {
 
   observer = new IntersectionObserver(workAnimatie, options)
 
-  boxElement.forEach((element)=>{
+  boxElement.forEach((element) => {
     observer.observe(element)
   })
 }
@@ -248,6 +248,38 @@ function workAnimatie(entries) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add('workAnimatie')
+    }
+  })
+}
+
+
+
+
+
+
+// ANIMATIE Skills
+function skillsAnimatieObserver() {
+  let options = {
+    // rootMargin: "0px",
+    threshold: 1
+  };
+
+  let observer
+  const boxElement = document.querySelectorAll('section#aboutMe ul li p')
+
+  observer = new IntersectionObserver(skillsAnimatie, options)
+
+  boxElement.forEach((element) => {
+    observer.observe(element)
+  })
+}
+
+skillsAnimatieObserver()
+
+function skillsAnimatie(entries) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('skillsAnimatie')
     }
   })
 }
