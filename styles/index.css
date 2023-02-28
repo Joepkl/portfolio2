@@ -436,7 +436,7 @@ textarea{
 button{
   background-color: var(--detailColor);
   border: none;
-  padding: .5em 1em;
+  padding: .3em 1em;
   text-transform: uppercase;
   font-size: 1em;
   margin-left: 5em;
