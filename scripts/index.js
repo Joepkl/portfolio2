@@ -135,7 +135,7 @@ function aboutActive(entries) {
 function workObserver() {
     let options = {
     //   rootMargin: "0px",
-        threshold: 0.5
+        threshold: 0.3
     };
 
     let observer
