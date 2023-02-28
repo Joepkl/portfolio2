@@ -1,0 +1,589 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --detailColor: #fad84b;
+  --backgroundColor: #143a4c;
+  --backgroundColor2: #000000;
+  --textColor: #ffffff;
+}
+
+@font-face {
+  font-family: Tusker;
+  src: url(../fonts/TuskerGrotesk-3500Medium.ttf);
+}
+
+@font-face {
+  font-family: Indie;
+  src: url(../fonts/IndieFlower-Regular.ttf);
+}
+
+@font-face {
+  font-family: Teko;
+  src: url(../fonts/Teko-Light.ttf);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Tusker;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+main {
+  background-color: var(--backgroundColor);
+}
+
+/* Landingspagina */
+section#landing {
+  height: 100vh;
+  position: relative;
+}
+
+h1,
+h2 {
+  color: var(--textColor);
+  font-size: 7em;
+  line-height: 1.1;
+  position: relative;
+  width: fit-content;
+  text-transform: uppercase;
+  margin-left: auto;
+  margin-right: 0.5em;
+}
+
+h1 {
+  padding-top: 1em;
+}
+
+h1::after,
+h2::after {
+  content: "";
+  width: calc(100% + 0.5em);
+  height: 100%;
+  background-color: var(--detailColor);
+  left: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+  transform-origin: right;
+}
+
+h1.test::after,
+h2.test::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Front end developer animatie */
+h3 {
+  color: var(--detailColor);
+  font-size: 5em;
+  line-height: 1.1;
+  width: fit-content;
+  margin: 1em 0.5em 0 auto;
+  text-transform: uppercase;
+}
+
+h3 span {
+  opacity: 0;
+}
+
+h3:first-of-type span.verschijn {
+  opacity: 1;
+}
+
+h3:nth-of-type(2) span.typing {
+  opacity: 1;
+}
+
+h3:nth-of-type(2) {
+  margin-top: 0;
+}
+
+/* Muis volgen animatie */
+#cursorBox {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 3px solid white;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: 0s;
+  opacity: 1;
+  left: -3em;
+}
+
+div#cursorBox.mouseDown {
+  width: 30px;
+  height: 30px;
+}
+
+div#cursorBox.mobile {
+  display: none;
+}
+
+/* Aside navigatie */
+aside {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+
+aside nav {
+  height: 100vh;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+  position: absolute;
+}
+
+aside a:first-of-type::before {
+  content: "<nav>";
+  display: inline-block;
+  writing-mode: horizontal-tb;
+  transform: rotate(30deg);
+  font-size: 0.5em;
+  position: absolute;
+  top: -1.8em;
+  left: 1em;
+  font-family: Indie;
+  text-transform: lowercase;
+}
+
+aside a {
+  color: var(--textColor);
+  color: darkgrey;
+  text-decoration: none;
+  font-size: 2em;
+  writing-mode: vertical-rl;
+  position: relative;
+  text-transform: uppercase;
+}
+
+aside a::after {
+  content: "";
+  background-color: var(--detailColor);
+  width: 0.15em;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 90%;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+/* Aside navigatie  active animatie */
+aside a.active::after {
+  opacity: 1;
+}
+
+/* About me pagina */
+section#aboutMe {
+  background-color: var(--backgroundColor2);
+}
+
+h4 {
+  color: var(--textColor);
+  font-size: 5em;
+  width: fit-content;
+  text-transform: uppercase;
+  margin: 0 0.5em 0.8em auto;
+  line-height: 1;
+  padding-top: 0.5em;
+  position: relative;
+  transition: 0.5s;
+  opacity: 0;
+  transform: rotate(30deg) translateY(0.5em);
+}
+
+h4::before {
+  content: "<h4>";
+  font-size: 0.3em;
+  text-transform: lowercase;
+  font-family: Indie;
+  position: absolute;
+  top: 100%;
+  left: -1em;
+  transform: rotate(10deg);
+}
+
+h5 {
+  color: var(--textColor);
+  font-family: Tusker;
+  font-size: 3em;
+  text-transform: uppercase;
+  margin-top: 0.7em;
+}
+
+section#aboutMe div {
+  margin-left: 5em;
+  margin-right: 1.2em;
+  position: relative;
+}
+
+div > p {
+  font-family: Teko;
+  text-transform: uppercase;
+  color: var(--textColor);
+  font-size: 1.5em;
+  display: inline;
+}
+
+div > a {
+  font-size: 1.5em;
+  font-family: Teko;
+  color: var(--textColor);
+  width: fit-content;
+  text-transform: uppercase;
+}
+
+section#aboutMe div > img {
+  width: 10em;
+  display: block;
+  transform: rotate(10deg);
+  margin: 4em 2em 0 auto;
+  transition: 0.5s;
+}
+
+section#aboutMe div > img:hover {
+  transform: scale(1.3);
+}
+
+section#aboutMe div > p:nth-of-type(3) {
+  position: absolute;
+  background-color: var(--detailColor);
+  color: var(--backgroundColor2);
+  padding: 0 0.5em;
+  transform: rotate(10deg);
+  bottom: 24em;
+  right: 0;
+}
+
+section#aboutMe div > ul {
+  padding-bottom: 5em;
+  list-style: none;
+}
+
+section#aboutMe div > ul p {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-family: Teko;
+  color: var(--textColor);
+  width: fit-content;
+  border: solid 0.1em white;
+  padding: 0.1em 1em;
+  margin-bottom: 0.6em;
+  transition: 0.5s;
+}
+
+section#aboutMe div > ul p:hover {
+  transform: translateX(3em);
+}
+
+
+
+
+
+/* Work pagina */
+section#work ul {
+  list-style: none;
+  margin-left: 5em;
+}
+
+section#work ul li {
+  width: calc(100vw - 2em - 5em);
+  margin-bottom: 2em;
+  position: relative;
+  overflow: hidden;
+  transform: translateY(3em);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+section#work ul img {
+  width: 100%;
+  filter: blur(1px);
+  transition: 0.5s;
+}
+
+section#work ul a {
+  height: 100%;
+  display: block;
+}
+
+section#work ul li:last-of-type {
+  margin-bottom: 5em;
+}
+
+section#work ul li > p {
+  font-family: Teko;
+  color: var(--textColor);
+  background-color: var(--backgroundColor2);
+  font-size: 1.5em;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  bottom: 0;
+  width: 100%;
+  padding: 0.3em 0;
+  transition: 0.5s;
+}
+
+section#work ul li:hover p {
+  transform: translateY(2em);
+}
+
+section#work ul li:hover img {
+  transform: scale(1.1);
+  filter: blur(0);
+}
+
+section#work h5 {
+  margin-top: 0;
+  font-size: 2em;
+}
+
+section #work p{
+  font-size: 1em;
+}
+
+
+
+/* Beschrijvingen projecten zichtbaar alleen bij (min width desktop) */
+section#work ul li:nth-of-type(2),
+section#work ul li:nth-of-type(3),
+section#work ul li:nth-of-type(6),
+section#work ul li:nth-of-type(7) {
+  display: none;
+}
+
+
+
+
+
+/* Contact pagina */
+section#contact {
+  height: 100vh;
+  background-color: var(--backgroundColor2);
+}
+section#contact ul p {
+  font-size: 1.5em;
+  color: var(--textColor);
+  text-transform: uppercase;
+  font-family: Teko;
+}
+
+section#contact > div {
+  margin-left: 5em;
+  margin-right: 1.2em;
+  position: relative;
+}
+
+form label{
+  color: var(--textColor);
+  font-size: 1.5em;
+}
+
+form input{
+  height: 1.5em;
+  width: 20em;
+  margin-left: 1em;
+}
+
+form div:first-of-type input{
+  width: 19.9em;
+}
+
+div.form{
+  display: flex;
+  align-items: center;
+}
+
+textarea{
+  margin-left: 1em;
+  height: 3em;
+  margin-top: .5em;
+}
+
+button{
+  background-color: var(--detailColor);
+  border: none;
+  padding: .5em;
+  text-transform: uppercase;
+  font-size: .8em;
+  margin-left: 13.3em;
+  margin-top: 1em;
+  cursor: pointer;
+}
+
+form{
+  width: 20em;
+  margin: 10em auto 0 auto;
+}
+
+
+
+
+
+/* Titel animatie */
+.titelAnimatie {
+  transform: rotate(0deg) translateX(0) translateY(0);
+  opacity: 1;
+}
+
+/* Work animatie */
+section#work ul li.workAnimatie {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+/* Niet muis volgen bij tablet/mobiel */
+@media only screen and (max-width: 960px) {
+  #cursorBox {
+    display: none;
+  }
+}
+
+/* Geen hover interactie bij tablet/mobiel */
+@media only screen and (max-width: 960px) {
+  section#aboutMe div > img:hover {
+    transform: rotate(10deg) scale(1);
+  }
+  section#aboutMe div > ul p:hover {
+    transform: translateX(0);
+  }
+  section#work ul li:hover p {
+    transform: translateY(0);
+  }
+  section#work ul li:hover img {
+    transform: scale(1);
+    filter: blur(1px);
+  }
+}
+
+/* Breakpoint fixes */
+@media only screen and (max-width: 380px) {
+  h1,
+  h2 {
+    font-size: 6em;
+    margin-right: 0.3em;
+  }
+  h3 {
+    font-size: 4em;
+    margin-right: 1em;
+  }
+}
+
+
+
+
+@media only screen and (min-width: 600px) {
+  h3 {
+    margin: .3em auto 0 2em;
+    font-size: 6em;
+  }
+  h1,
+  h2 {
+    font-size: 8em;
+  }
+  h1 {
+    padding-top: 0.7em;
+  }
+
+  section#aboutMe div > img {
+    width: 15em;
+  }
+  section#aboutMe h5 {
+    margin-top: -0.5em;
+  }
+  section#aboutMe div > p:nth-of-type(3) {
+    bottom: 25.5em;
+  }
+  section#work ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-right: 2em;
+  }
+  section#work ul li {
+    width: calc(50vw - 4.5em);
+  }
+  section#work ul li:nth-of-type(3) {
+    margin-bottom: 5em;
+  }
+  section#work ul li:nth-of-type(2),
+  section#work ul li:nth-of-type(3),
+  section#work ul li:nth-of-type(6),
+  section#work ul li:nth-of-type(7) {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 680px){
+  
+}
+
+@media only screen and (min-width: 800px) {
+  section#aboutMe h5 {
+    margin-top: -3em;
+  }
+  section#aboutMe div > p:nth-of-type(3) {
+    bottom: 20.5em;
+  }
+}
+
+@media only screen and (min-width: 980px) {
+  h4 {
+    margin-right: 2em;
+  }
+  h3 {
+    margin: 20vh auto 0 2em;
+  }
+  section#aboutMe div {
+    margin-left: 11em;
+    margin-right: 8em;
+  }
+  section#work ul {
+    margin-left: 11em;
+    margin-right: 8em;
+    margin-top: 5em;
+  }
+  section#work ul li {
+    width: calc(50% - 1em);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  h4 {
+    margin-right: 20vw;
+  }
+  section#aboutMe div {
+    margin-left: 20vw;
+    margin-right: 20vw;
+  }
+  section#work ul {
+    margin-left: 20vw;
+    margin-right: 20vw;
+    margin-top: 5em;
+  }
+  section#work ul li {
+    width: calc(50% - 1em);
+  }
+}
