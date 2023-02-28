@@ -389,32 +389,32 @@ section#contact > div {
   position: relative;
 }
 
+
+form{
+  margin: 10em 2.5em 0 5em;
+  position: relative;
+}
+
 form label{
   color: var(--textColor);
   font-size: 1.5em;
+  margin-bottom: .1em;
+  margin-top: 1em;
 }
 
 form input{
-  height: 1.5em;
-  width: 20em;
-  margin-left: 1em;
-  position: absolute;
-  right: 0;
-}
-
-form div:first-of-type input{
-  width: 19.9em;
+  font-size: 1.5em;
+  font-family: Teko;
+  padding: 0 .5em;
 }
 
 div.form{
   display: flex;
-  align-items: center;
+  flex-direction: column;
 }
 
 textarea{
-  margin-left: 1em;
-  height: 3em;
-  margin-top: .5em;
+  height: 10em;
 }
 
 button{
@@ -431,11 +431,7 @@ button{
   right: 0;
 }
 
-form{
-  width: 20em;
-  margin: 10em auto 0 auto;
-  position: relative;
-}
+
 
 
 
@@ -496,6 +492,15 @@ section#work ul li.workAnimatie {
     margin-right: 1em;
   }
 }
+
+/* @media only screen and (max-width: 480px){
+  form input, form div:first-of-type input, textarea{
+    width: 15em;
+  }
+  form{
+    width: 17em;
+  }
+} */
 
 
 
