@@ -44,6 +44,7 @@ main {
 /* Landingspagina */
 section#landing {
   height: 100vh;
+  min-height: 50em;
   position: relative;
 }
 
@@ -400,6 +401,7 @@ section#work ul li:nth-of-type(7) {
 /* Contact pagina */
 section#contact {
   height: 100vh;
+  min-height: 50em;
   background-color: var(--backgroundColor2);
 }
 section#contact ul p {
